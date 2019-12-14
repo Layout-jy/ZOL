@@ -1,4 +1,5 @@
 .banner-box{width:1009px;height:377px;background-color:#f4e5c7}
+//轮播幻灯片
 .slideBox{width:100%;height:100%;position:relative;overflow:hidden}
 .slideBox .hd{height:18px;overflow:hidden;position:absolute;left:50%;bottom:20px;z-index:1;margin-left:-42px}
 .slideBox .hd ul{overflow:hidden;zoom:1;float:left}
@@ -12,3 +13,11 @@
 .slideBox .next{left:auto;right:0;background-position:9px 0}
 .slideBox .next:hover,.slideBox .prev:hover{background-color:rgba(0,0,0,.5)}
 .slideBox .nextStop,.slideBox .prevStop{display:none}
+
+//导航
+.class-nav{width:184px;height:367px;color:#333;z-index:2;padding-bottom:4px;background-color:#fff}
+.class-nav .class-name{display:inline-block;width:100%;font-size:18px;text-indent:12px}
+.class-nav a{color:#333;display:inline-block;height:14px;line-height:14px;margin:7px 0}
+.class-nav a:hover{color:#f74b44}
+.class-nav em{border-left:1px solid #e4e4e4}
+.class-nav .bln{border-right:none}

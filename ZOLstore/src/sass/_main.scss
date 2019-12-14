@@ -1,7 +1,5 @@
 .main{width:890px;height:auto;margin-right:10px}
 
-
-
 .title{height:22px;line-height:22px}
 .title .header-tit{font-size:22px;font-weight:400}
 .title .header-tit.header-tit-icon{overflow:hidden;text-indent:-999em}
@@ -14,3 +12,70 @@
 .tab-title{border-bottom:1px solid #f4f4f4;margin-top:-5px;overflow:hidden}
 .tab-title h2{float:left;font-size:20px;font-weight:400;margin-right:40px;padding-bottom:5px;cursor:pointer}
 .tab-title h2.on{color:#f74b44;border-bottom:1px solid #f74b44}
+.side,.siled{width:300px}
+.siled{height:auto}
+
+
+.item{width:154px}
+.item img{display:block}
+.item .pic-box{position:relative}
+.item .pic-box .pic-icon{position:absolute;left:0;top:0;z-index:9;width:26px;height:38px}
+.item .pic-box .pic-icon-one{background:url(https://icon.zol-img.com.cn/daogou/src/assets/components/list/images/pic-icon-one-e6a975dda4.png) no-repeat;-webkit-background-size:26px 38px;background-size:26px 38px}
+.item .pic-box .pic-icon-two{background:url(https://icon.zol-img.com.cn/daogou/src/assets/components/list/images/pic-icon-two-4aac37ed49.png) no-repeat;-webkit-background-size:26px 38px;background-size:26px 38px}
+.item .pic-box .pic-icon-three{background:url(https://icon.zol-img.com.cn/daogou/src/assets/components/list/images/pic-icon-three-1c9c7cb4ee.png) no-repeat;-webkit-background-size:26px 38px;background-size:26px 38px}
+.item .pic-text{line-height:20px;height:40px;margin-top:5px;position:relative;-o-text-overflow:ellipsis;text-overflow:ellipsis;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}
+.item .pic-text a{color:#333}
+.item .pic-text a.more-txt{color:#477cc8}
+.item .pic-text a.more-txt:hover,.item .pic-text a:hover{color:#c00}
+.item .foot-price{color:#f74b44;padding:5px 0}
+.item .foot-price a{color:#f74b44}
+.item .foot-price a:hover{color:#c00}
+.item .foot-price .original{margin-left:10px;font-size:12px;display:inline-block;text-decoration:line-through}
+.item .description{font-size:14px;line-height:24px;height:72px;-o-text-overflow:ellipsis;text-overflow:ellipsis;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden;margin-top:5px}
+.item-list{width:850px}
+.pic-box{position:relative}
+
+.huimai-list .pic-box a,.jinriqianggou .pic-box a{position:relative;display:block;width:154px;height:154px;overflow:hidden}
+.huimai-list .pic-box a img,.jinriqianggou .pic-box a img{width:154px;height:auto}
+.huimai-list .pic-box a{background-color:#f7f7f7}
+//右侧广告模块
+.siled{width:300px;height:auto}
+.item-right-mol{width:120px}
+.item-right-mol .pic-box{width:120px;height:120px;overflow:hidden;position:relative}
+.item-right-mol .pic-box:hover .all-text-opacity{background:rgba(0,0,0,.35);position:absolute;width:100%;height:100%;top:0;left:0;text-align:center;color:#fff}
+.item-right-mol .pic-box:hover .all-text-opacity em{display:block;margin-top:30px;height:60px;line-height:20px;overflow:hidden;-o-text-overflow:ellipsis;text-overflow:ellipsis;display:-webkit-box;-webkit-line-clamp:3;padding:0 10px;-webkit-box-orient:vertical}
+.item-right-mol .pic-box a{position:relative;display:block;width:120px;height:120px;overflow:hidden}
+.item-right-mol .pic-box a img{width:120px;height:auto;position:absolute;left:0;top:0}
+.item-right-mol em{display:none}
+
+
+// ********商品列表模块start
+.info-box{width:668px;height:184px;position:relative}
+.refresh-list .pic-box a{position:relative;display:block;width:154px;height:154px;overflow:hidden}
+.refresh-list .pic-box a img{width:100%;height:auto}
+.refresh-list .info-box h2 a{display:inline-block;width:100%;word-break:break-all}
+.item.item-list .pic-text{line-height:22px}
+.item.item-list .info-box h2 a{font-weight:400}
+.item.item-list .foot-info-fl .source{color:#333;height:26px;line-height:26px;margin-top:5px}
+.item.item-list .foot-info-fl .source img{float:left;width:24px;height:24px;margin-right:8px}
+.item.item-list .foot-info-fl .name{height:26px;line-height:26px;padding-left:0;display:inline-block}
+.item.item-list .foot-info-fl .name a{margin-left:0;color:#666}
+.item.item-list .foot-info-fl .name img{float:left;margin-right:10px;-webkit-border-radius:13px;border-radius:13px}
+.item.item-list .foot-info-fr .get-coupon{background:#ffa133}
+.item.item-list .foot-info-fr .get-coupon:hover{background:#ffbe33}
+.item.item-list .foot-info-fr .time{margin-right:10px}
+.item.item-list .foot-info-fr .btn{-webkit-border-radius:0;border-radius:0;margin-left:10px}
+
+    //商品列表尾部
+.footer-info,.footer-info-absolute{position:absolute;bottom:30px;left:0;width:100%;line-height:36px}
+.foot-info-fl span,.tit-right-info span{margin-right:20px;padding-left:19px;color:#666}
+.foot-info-fl .commit,.tit-right-info .commit{background:url(https://icon.zol-img.com.cn/daogou/src/assets/components/list/images/commit-db920cf07d.png) no-repeat}
+.foot-info-fl .collect,.tit-right-info .collect{background:url(https://icon.zol-img.com.cn/daogou/src/assets/components/list/images/collect-e27ee0ce6e.png) no-repeat}
+.foot-info-fl .collect.on,.tit-right-info .collect.on{background:url(https://icon.zol-img.com.cn/daogou/src/assets/components/list/images/collecthover-806018c951.png) no-repeat}
+.foot-info-fl .name a,.tit-right-info .name a{display:inline-block;margin-left:10px}
+.foot-info-fl .name img,.tit-right-info .name img{width:26px;height:26px}
+.foot-info-fl .name font,.tit-right-info .name font{margin-left:5px}
+.foot-info-fr a,.foot-info-fr span{margin-left:20px}
+.foot-info-fr a.source{color:#333}
+.foot-info-fr .btn{-webkit-border-radius:2px;border-radius:2px}
+

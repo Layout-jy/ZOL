@@ -1,9 +1,12 @@
 body,dd,dl,dt,figure,form,h1,h2,h3,h4,h5,h6,html,input,li,ol,p,select,ul{margin:0;padding:0;font-family:Microsoft YaHei,Helvetica Neue,Helvetica,Arial,PingFang SC,Hiragino Sans GB,Heiti SC,WenQuanYi Micro Hei,sans-serif}
 ol,ul{list-style:none}
 body{font-size:12px;line-height:1.5;color:#333;background:#f6f6f6;-webkit-text-size-adjust:none;-webkit-font-smoothing:antialiased}
+body{background-color:#f6f6f6}
 button,input,select{vertical-align:middle;font-size:100%}
 fieldset,img{border:0 none}
 em{font-style:normal}
+.pic,.pic a,.pic img{display:block}
+//清除高度塌陷
 .clear,.clearfix:after{clear:both;display:block;height:0;visibility:hidden}
 .clearfix:after{content:".";font-size:0}
 .wrapper{width:1200px;margin-left:auto;margin-right:auto}
@@ -15,11 +18,17 @@ a,a:hover{text-decoration:none}
 a:hover{color:#c00}
 .btn{height:36px;line-height:36px;background:#f74b44;padding:0 20px;color:#fff;display:inline-block;*display:inline;vertical-align:middle;cursor:pointer;border:0;*zoom:1;*border:0}
 .btn:hover{background:#cd3430;color:#fff}
+h2 a{color:#333}
+h2 a font{display:inline-block;margin-left:10px}
+h2 a:hover{color:#cd3430}
 
-// margin和padding
+
+
+// 清空margin和padding
 .nm{margin:0!important}
 .np{padding:0!important}
-// margin的四个方向
+.mt0{margin-top:0!important}
+// 四个方向的margin值
 .mt{margin-top:10px!important}
 .mb{margin-bottom:10px!important}
 .ml{margin-left:10px!important}
@@ -43,34 +52,33 @@ a:hover{color:#c00}
 .ml14{margin-left:14px!important}
 .ml-20{margin-left:-20px!important}
 
-//padding的四个方向
+//四个方向的padding值
 .pt{padding-top:10px!important}
 .pb{padding-bottom:10px!important}
 .pl{padding-left:10px!important}
 .pr{padding-right:10px!important}
+@for $num from 1 to 20 {
+    
+    .pt#{$num}{
+       padding-top: $num * 1px!important
+    }
+    .pb#{$num}{
+       padding-bottom: $num * 1px!important
+    }
+    .pl#{$num}{
+       padding-left: $num * 1px!important
+    }
+    .pr#{$num}{
+       padding-right: $num * 1px!important
+    }
+}
 
-.pt15{padding-top:15px!important}
-.pb15{padding-bottom:15px!important}
-.pl3{padding-left:3px!important}
-.pl15{padding-left:15px!important}
-.pl12{padding-left:12px!important}
-.pr15{padding-right:15px!important}
-.pr3{padding-right:3px!important}
-.pr12{padding-right:12px!important}
-.pt17{padding-top:17px}
-.pb20{padding-bottom:20px}
-.pl20{padding-left:20px}
-.pr20{padding-right:20px}
 
 .pl.p20{padding-left:20px!important}
 .pt.p20{padding-top:20px!important}
 .pb.p20{padding-bottom:20px!important}
 .pr.p20{padding-right:20px!important}
 
-.pt5{padding-top:5px}
-.pb5{padding-bottom:5px}
-.pl5{padding-left:5px}
-.pr5{padding-right:5px}
 .pb30{padding-bottom:30px}
 
 .t5{top:5px}
@@ -96,7 +104,8 @@ a:hover{color:#c00}
 .hide{display:none!important}
 .static{position:static!important}
 .relative{position:relative!important}
-// 设置字体大小
+.h80{height:80px}
+// 循环设置设置字体大小
 @for $num from 12 to 25 {
     .f#{$num}{
         font-size: $num * 1px!important;
