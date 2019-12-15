@@ -6,7 +6,7 @@
 .slideBox .hd ul li{float:left;width:18px;height:18px;margin-right:10px;cursor:pointer;background:url(https://icon.zol-img.com.cn/daogou/src/assets/components/focus/images/banner-icon-41280918f7.png) no-repeat}
 .slideBox .hd ul .on{background:#fff;background:url(https://icon.zol-img.com.cn/daogou/src/assets/components/focus/images/banner-action-icon-5d2fe22f08.png) no-repeat}
 .slideBox .bd{position:relative;height:100%;width:100%;z-index:0}
-.slideBox .bd ul{width:100%;height:377px}
+.slideBox .bd ul{width:100%;height:377px;position: relative; overflow: hidden; padding: 0px; margin: 0px;left: 0px;}
 .slideBox .bd ul li{zoom:1;vertical-align:middle;height:100%;width:100%;overflow:hidden}
 .slideBox .bd ul li img{width:100%;height:100%;display:block}
 .slideBox .next,.slideBox .prev{position:absolute;left:0;top:50%;margin-top:-20px;display:block;width:23px;height:40px;background:url(https://icon.zol-img.com.cn/daogou/src/assets/components/focus/images/icon_03-c9ff8f016c.png) no-repeat 50%;background-position:7px -52px;background-color:rgba(76,76,76,.3)}
