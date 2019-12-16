@@ -2,6 +2,7 @@ import{ bufferMove } from './move.js';
 function log(obj){
     console.log(obj)
 };
+//取元素封装
 function qS(node){
     if(document.querySelectorAll(node).length>1){
         return document.querySelectorAll(node);

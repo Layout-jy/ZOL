@@ -1,0 +1,22 @@
+{
+  "name": "zol",
+  "version": "1.0.0",
+  "description": "ZOL商城",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Layout-jy/ZOL.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Layout-jy/ZOL/issues"
+  },
+  "homepage": "https://github.com/Layout-jy/ZOL#readme",
+  "devDependencies": {
+    "gulp": "^4.0.2"
+  }
+}
