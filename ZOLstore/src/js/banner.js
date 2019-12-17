@@ -1,4 +1,4 @@
-import{ bufferMove } from './move.js';
+import{ bufferMove } from './effect.js';
 function log(obj){
     console.log(obj)
 };

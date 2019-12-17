@@ -25,7 +25,7 @@ class goodsRender {
                     </a>
                 </div>
                 <div class="pic-text f14">
-                    <a href="##"   target="_blank">${value.title}</a>
+                    <a href="http://192.168.64.2/www/ZOL/ZOLstore/src/detail.html?sid=${value.sid}"   target="_blank">${value.title}</a>
                 </div>
                 <div class="foot-price mt f22">
                     <span class="f12">¥</span>${value.price} <span class="original c999 f12">

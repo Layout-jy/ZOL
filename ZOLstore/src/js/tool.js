@@ -1,8 +1,8 @@
-//console.log简写
+//****************** console.log简写 ******************//
 function log(obj) {
     console.log(obj)
 };
-//获取元素封装
+//********************** 获取元素封装 **********************//
 function $(node) {
     if (document.querySelectorAll(node).length > 1) {
         return document.querySelectorAll(node);
@@ -10,11 +10,11 @@ function $(node) {
         return document.querySelector(node);
     }
 }
-//随机数
+//********************** 生成随机数 **********************//
 function mathRandom(min, max) {
     return Math.round(Math.random() * (max - min) + min);
 }
-//ajax插件
+//********************** ajax插件 **********************//
 function ajax(obj) {
     //将对象转换成数据拼接适合的字符串的格式?&
     function objToString(obj) {
