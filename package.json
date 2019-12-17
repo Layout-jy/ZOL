@@ -35,7 +35,7 @@
   },
   "dependencies": {
     "browserify": "^16.5.0",
-    "jquery": "^1.12.4",
+    "jquery": "^3.4.0",
     "vinyl-source-stream": "^2.0.0"
   }
 }
