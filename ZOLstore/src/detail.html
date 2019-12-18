@@ -7,7 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
     <link rel="stylesheet" href="./css/detail.css">
-    <script src="./js/detail.js" type="module"></script>
+    <script src="./js/index.js" type="module"></script>
 </head>
 
 <body>
@@ -30,14 +30,11 @@
         <div class="zs-inner clearfix">
             <div class="zs-deal-detail">
                 <!-- 焦点图 -->
-                <div class="zs-focus">
+                <div class="zs-focus" style="position: relative">
                     <div class="zs-big-pic" id="zs-big-pic" rel="gal1" >
                         <a href="https://mercrt-fd.zol-img.com.cn/t_s800x800/g2/M00/0B/03/ChMlWl1WbYOIL9YoAAUYYfwaLIQAAMmOgMYRpUABRh5125.png"
-                            id="zoom1"
-                            
-                            class="MagicZoom"
-                            style="cursor: crosshair; position: relative; display: block; outline: 0px; text-decoration: none;height: 400px; width: 400px;overflow: hidden;"><img style="width: 400px; height: 400px;"
-                                src="https://mercrt-fd.zol-img.com.cn/t_s400x400/g2/M00/0B/03/ChMlWl1WbYOIL9YoAAUYYfwaLIQAAMmOgMYRpUABRh5125.png" 
+                            id="zoom1" class="MagicZoom" style="cursor: crosshair; position: relative; display: block; outline: 0px; text-decoration: none;height: 400px; width: 400px;overflow: hidden;">
+                            <img style="width: 400px; height: 400px;" src="https://mercrt-fd.zol-img.com.cn/t_s400x400/g2/M00/0B/03/ChMlWl1WbYOIL9YoAAUYYfwaLIQAAMmOgMYRpUABRh5125.png" 
                                 id="sim954654">
                             <div class="MagicZoomPup"
                                 style="z-index: 10; visibility: hidden; position: absolute; opacity: 0.5; width: 198.5px; height: 198.5px; left: 123.75px; top: 201.5px;background: #ff0000">
@@ -107,10 +104,7 @@
                                 <a data-cmd="qzone" class="bds_qzone" title="分享到QQ空间"></a>
                                 <a data-cmd="tqq" class="bds_tqq" title="分享到腾讯微博"></a>
                             </div>
-                            <script>
-                                with (document)
-                                0[(getElementsByTagName('head')[0] || body).appendChild(createElement('script')).src = 'http://bdimg.share.baidu.com/static/api/js/share.js?cdnversion=' + ~(-new Date() / 36e5)];
-                            </script>
+                           
                         </div>
                         <!--<a href="http://my.zol.com/index.php?c=ComplainManage&a=LineComplainApply"   class="zs-share-title"><i></i>投诉</a>-->
                     </div>
@@ -145,10 +139,10 @@
                             <dt>团&nbsp;&nbsp;购&nbsp;&nbsp;价：</dt>
                             <dd class="clearfix">
                                 <span class="zs-price">
-                                    ¥ <em id="zp-goods-price">15399.00</em>
+                                    ¥ <em id="zp-goods-price">0000.00</em>
                                 </span>
-                                <span class="original">￥18999.00</span>
-                                <span class="save-icon">立省3600元</span>
+                                <span class="original">0000.00</span>
+                                <span class="save-icon">立省</span>
                             </dd>
                         </dl>
                         <!--满赠满减-->
@@ -158,14 +152,13 @@
                     <!-- 交易区块 -->
                     <div class="zs-detail-infor">
 
-                        <dl class="zs-freight" style="z-index:1;display:none;">
+                        <!-- <dl class="zs-freight" style="z-index:1;display:none;">
                             <dt>服务保障：</dt>
                             <dd class="clearfix">
                                 <a href="http://go.zol.com/topic/3056598.html" target="_blank"> <img
-                                        src="https://icon.zol-img.com.cn/newshop/server/1.png" align="absmiddle"
-                                        title="ZOL用户保障服务:7天退换货" border="0"></a>&nbsp;&nbsp;支持七天无理由退换货
+                                        src="https://icon.zol-img.com.cn/newshop/server/1.png" title="ZOL用户保障服务:7天退换货"></a>&nbsp;&nbsp;支持七天无理由退换货
                             </dd>
-                        </dl>
+                        </dl> -->
 
 
                         <dl class="zs-service-bar" style="z-index:1;">
@@ -281,10 +274,8 @@
                                 <!-- 立即购买 -->
                                 <div class="zs-deal-btn clearfix">
                                     <a style="cursor:pointer;" title="立即购买" class="zs-buy-now" id="buynow"
-                                        onclick="buyNow();">立即购买</a>
-                                    <a href="##" class="zs-store-buy"
-                                        onclick="$.addCartInfo({goodsId: '29321828', merchantId: '191490', fromMerchantId: '191490', promoId: '0', cartFrom: 1, shareId: '0'})"
-                                        title="加入购物车">加入购物车</a>
+                                        >立即购买</a>
+                                    <a href="http://192.168.64.2/www/ZOL/ZOLstore/src/cart.html" class="zs-store-buy" title="加入购物车">加入购物车</a>
                                     <a href="##" class="zs-confirm-btn" style="display:none;">确认</a>
                                     <!--<a style="cursor:pointer;" title="看评测" class="zs-look-comment">看评测<i class="new_icon"></i></a>-->
                                 </div>

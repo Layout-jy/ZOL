@@ -1,19 +1,35 @@
-import { log, $, mathRandom, ajax } from './tool.js';
+import { log, $, cookietool, ajax } from './tool.js';
 class DetailRender {
     constructor() {
+        //放大镜效果所需
         this.showpic = $('#zs-big-pic img');//展示框内的大图（小图）
-        this.showLi = $('#zs-big-pic a')//小图的容器
+        this.showLi = $('#zs-big-pic a');//小图的容器
+        this.focus = $('.zs-focus');
         this.bigpic = $('#zoom1-big img');//大图
         this.smallfdj = $('.MagicZoomPup');//小放大镜
         this.bigfdj = $('.MagicZoomBigImageCont')//大放大镜
+        this.zbig=$('#zoom1-big');
+        //**放大镜效果所需
+
+        //渲染所需
         this.oul = $('#zs-focus-list ul'); //缩略图列表的容器
         this.sid = location.search.slice(1).split('=')[1];
-        this.zbig=$('#zoom1-big');
-        
+        this.price = $('#zp-goods-price');//商品价格
+        this.oriPrice = $('.original');//商品原价
+        this.save = $('.zs-sale-price .save-icon');//省钱
+        //
+        //cookie所需
+        this.pbtn = $('.zs-store-buy');
+
+
     }
     init() {
+        log(this.price);
+        log(this.oriPrice);
+        log(this.save);
         this.renderLi()
         this.magnifyingGlass()
+        this.shoppingCart()
     }
     //渲染所有的小图，数据库有几张渲染几张
     renderLi() {
@@ -26,7 +42,6 @@ class DetailRender {
             let urls = data.urls;
             urls = urls.split(',');
             let str = '';
-            log(urls);
             for (let value of urls) {
                 str += `
                 <li style="cursor:pointer;" class="">
@@ -35,7 +50,9 @@ class DetailRender {
                 </li>
                 `
             }
-
+            this.price.innerHTML = data.price;
+            this.oriPrice.innerHTML = data.originalprice;
+            this.save.innerHTML = "立省" + (data.originalprice - data.price);
             this.oul.innerHTML = str;
             this.liClick();
         })
@@ -45,7 +62,6 @@ class DetailRender {
     liClick() {
         let oli = $('#zs-focus-list ul li');
         let smallPic = $('#zs-focus-list ul li a img');
-        log(this.smallfdj)
         let _this = this;
         oli[0].className = 'hover';
         for (let i = 0; i < oli.length; i++) {
@@ -61,9 +77,9 @@ class DetailRender {
     }
     //放大镜效果
     magnifyingGlass(){
-        
         let _this = this;
         this.showLi.onmouseover = function(){
+            //鼠标移入，小放大镜和大放大镜显示
             _this.smallfdj.style.visibility="visible";
             _this.zbig.style.display = 'block';
             _this.showLi.onmouseout = function(){
@@ -79,8 +95,8 @@ class DetailRender {
                 _this.smallfdj.style.width = sfW+'px';
                 _this.smallfdj.style.height = sfH +'px';
                 //获取鼠标距离小图边界的位置
-                let mouseX = ev.clientX-_this.showLi.offsetLeft;
-                let mouseY = ev.clientY-_this.showLi.offsetTop;
+                let mouseX = ev.clientX-_this.focus.offsetLeft;
+                let mouseY = ev.clientY-_this.focus.offsetTop;
                 //小放大镜中心点相对于父元素的距离
                 let sfTop = mouseY-_this.smallfdj.offsetHeight/2;
                 let sfLeft = mouseX-_this.smallfdj.offsetWidth/2;
@@ -90,8 +106,6 @@ class DetailRender {
                 //大图运动
                 _this.bigpic.style.left = -bili*sfLeft+'px';
                 _this.bigpic.style.top = -bili*sfTop+'px';
-                log(bili)
-                log(sfLeft)
                 //限制运动范围
                 if(sfTop<=0){
                     _this.smallfdj.style.top = 0+'px';
@@ -111,8 +125,35 @@ class DetailRender {
             }
             
         }
-        
     }
-    
+    //存储cookie
+    shoppingCart(){
+        let _this = this;
+        //准备两个空数组存sid和商品数量
+        let namearr = [];
+        let valuearr =[];
+        //点击加入购物车触发
+        this.pbtn.onclick = function(){
+            let num = $('.zs-goods-number').value;//获取输入框中的数量
+            //判断，如果cookie存在，取出来把sid和商品数量给两个数组
+            if(cookietool.getcookie('sid')&&cookietool.getcookie('count')){
+                namearr = cookietool.getcookie('sid').split(',');
+                valuearr = cookietool.getcookie('count').split(',');
+            }
+            //寻找数组中是否含有该商品的sid
+            //如果有，把商品数量累加
+            if(namearr.indexOf(_this.sid)!=-1){
+                let count = parseInt(valuearr[namearr.indexOf(_this.sid)]);
+                valuearr[namearr.indexOf(_this.sid)] = count + parseInt(num);
+                cookietool.addcookie('count',valuearr,365);
+            //如果没有，直接把sid和购买数量push到两个数组中
+            }else{
+                namearr.push(_this.sid);
+                valuearr.push(num);
+                cookietool.addcookie('sid',namearr,365);
+                cookietool.addcookie('count',valuearr,365);
+            }
+        }
+    }
 }
-new DetailRender().init()
+export{ DetailRender }
