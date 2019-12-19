@@ -13,7 +13,7 @@ class goodsRender {
             type: 'get',
             url: 'http://192.168.64.2/www/ZOL/ZOLstore/php/zoldata.php',
             dataType: 'json'
-        }).then(function (data) {
+        }).then( (data) =>{
             let str = '';
             for (let value of data) {//遍历json数据累加给str
                 str += `
@@ -34,7 +34,7 @@ class goodsRender {
                 </div>
                 `;
             }
-            _this.oList.innerHTML = str;//最后一次性渲染出来
+            this.oList.innerHTML = str;//最后一次性渲染出来
         })
     }
 }

@@ -56,7 +56,6 @@ class DetailRender {
             this.oul.innerHTML = str;
             this.liClick();
         })
-
     }
     //给所有渲染出到小图添加点击事件
     liClick() {
