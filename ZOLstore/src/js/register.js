@@ -22,9 +22,23 @@ class FormValidator {
             if (phone_num != '') {//判断输入是否为空
                 if (phone_num.length == 11) {//判断手机号是否小于11位(最大长度已经限制11位数)
                     if (/^1[3578]\d{9}$/.test(phone_num)) {//正则判断
-                        this.oWrong[0].style.display = 'none';
-                        this.oRight[0].style.display = 'block';
-                        this.phoneFlag = true;
+                        //在此处用ajax请求后端，判断用户名有没有重复
+                        ajax({
+                            type: 'post',
+                            url: 'http://192.168.64.2/www/ZOL/ZOLstore/php/registry.php',
+                            data: {
+                                phonenumber: this.oInp[0].value
+                            }
+                        }).then(data => {
+                            if (!data) {//手机号未被注册的情况
+                                this.oWrong[0].style.display = 'none';
+                                this.oRight[0].style.display = 'block';
+                                this.phoneFlag = true;
+                            } else {
+                                this.oWrong[0].style.display = 'block';
+                                this.oWrong[0].innerHTML = '该号码已经注册';
+                            }
+                        })
                     } else {
                         this.oWrong[0].style.display = 'block';
                         this.oWrong[0].innerHTML = '手机号格式有误';
@@ -93,12 +107,14 @@ class FormValidator {
     subRegister() {
         this.oSub.onclick = () => {
             if (this.phoneFlag && this.passwordFlag && this.rePassFlag && this.emailFlag) {
-                setTimeout(function(){
+                setTimeout(function () {
                     alert('注册成功');
-                    $('#J_register_phone_loading').style.display='none';
-                },1000);
-                $('#J_register_phone_loading').style.display='block';
-                
+                    $('#J_register_phone_loading').style.display = 'none';
+                }, 1000);
+                $('#J_register_phone_loading').style.display = 'block';
+            }else{
+                alert('请乖乖填写表单');
+                return false;
             }
         }
     }

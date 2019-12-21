@@ -26,7 +26,7 @@
     </div>
     <div class="register-wrap clearfix">
         <div class="title">30秒快速注册，加入值买</div>
-        <form id="J_RegisterForm" action="">
+        <form id="J_RegisterForm" action="http://192.168.64.2/www/ZOL/ZOLstore/php/registry.php" method="POST">
             <div class="register-module">
                 <ul class="register-tab clearfix" id="J_register">
                     <li class="current" rel="phone"><span class="phone-number">用手机号注册</span></li>
@@ -36,15 +36,14 @@
                     <!-- 表单验证输入框 -->
                     <div class="register-form">
                         <div class="label"><em class="xh">*</em>手机号：</div>
-                        <input name="phonenumber" id="J_register_phone_number" type="text" class="text"
-                            maxlength="11">
+                        <input name="phonenumber" id="J_register_phone_number" type="text" class="text" maxlength="11">
                         <i class="right-tips" style="display: none"></i>
                         <i class="wrong-tips" style="display:none;" id="J_register_phone_tips">手机号错误，请重新填写</i>
                         <div class="tips">请填写手机号码</div>
                     </div>
                     <div class="register-form">
                         <div class="label"><em class="xh">*</em>密码：</div>
-                        <input name="pasword" id="J_register_pasword" type="password" maxlength="16" class="text">
+                        <input name="password" id="J_register_pasword" type="password" maxlength="16" class="text">
                         <i class="right-tips" style="display: none"></i>
                         <i class="wrong-tips" style="display:none;" id="J_register_pasword_phone_tips">密码不可以包含特殊字符</i>
                         <div class="tips">6-16位字母和数字的组合，不可用特殊字符</div>
@@ -74,7 +73,7 @@
                             href="##" target="_blank"
                             class="xy_a">《隐私权说明》</a>
                     </label>
-                    <input name="J_register_phone_submit" type="button" value="注册" class="register-btn" id="J_register_phone_submit">
+                    <input name="submit" type="submit" value="注册" class="register-btn" id="J_register_phone_submit">
                     <span style="display:none" class="register-btn submit-loading"
                         id="J_register_phone_loading">正在注册...</span>
                 </div>
